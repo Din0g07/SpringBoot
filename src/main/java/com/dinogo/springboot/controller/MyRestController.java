@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.dinogo.springboot.entity.Employee;
-//import rest.exeption_handling.EmployeeNotFoundException;
 import com.dinogo.springboot.service.EmployeeService;
 
 import java.util.List;
@@ -30,9 +29,6 @@ public class MyRestController {
     @GetMapping("/employees/{id}")
     public Employee showEmployee(@PathVariable int id) {
         Employee employee = employeeService.getEmployee(id);
-//        if(employee == null) {
-//            throw new EmployeeNotFoundException("Employee " + id + " not found");
-//        }
         return employee;
     }
 
@@ -50,10 +46,6 @@ public class MyRestController {
 
     @DeleteMapping ("/employees/{id}")
     public String deleteEmployee(@PathVariable int id) {
-        Employee employee = employeeService.getEmployee(id);
-//        if(employee == null) {
-//            throw new EmployeeNotFoundException("Employee " + id + " not found");
-//        }
         employeeService.deleteEmployee(id);
         return "Employee " + id + " was deleted";
     }
