@@ -11,7 +11,6 @@ import com.dinogo.springboot.entity.Employee;
 import java.util.List;
 @Repository
 public class EmployeeDAOImp implements EmployeeDAO {
-//    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private EntityManager entityManager;
     @Override
@@ -47,6 +46,6 @@ public class EmployeeDAOImp implements EmployeeDAO {
                 "where id =:employeeId ");
 
         query.setParameter("employeeId", id);
-        query.executeUpdate();//?
+        query.executeUpdate();
     }
 }
